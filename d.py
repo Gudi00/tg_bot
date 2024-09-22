@@ -28,7 +28,7 @@ async def reply1(client, message):
     if message_check(greet_list, message) and message_check(reward_list, message):
         time.sleep(random.randint(7, 15))
         await message.reply(RESPONSE)
-        time.sleep(random.randint(3, 5))
+        time.sleep(random.randint(3, 6))
         await message.reply(RESPONSE_NOT_MY)
 
 if __name__ == '__main__':
