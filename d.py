@@ -28,5 +28,7 @@ async def reply1(client, message):
         await message.reply(RESPONSE)
         await message.reply(RESPONSE_NOT_MY)
 
-app.run()
+if __name__ == '__main__':
+    print("Bot successfully started")
+    app.run()
 
