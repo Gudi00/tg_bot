@@ -1,4 +1,5 @@
-
+import random
+import time
 from pyrogram import Client, filters
 
 API_ID = '26118223'
@@ -25,7 +26,9 @@ async def reply1(client, message):
     greet_list = ['всем привет', 'добрый день', 'нужно', 'нужны', 'надо']
     reward_list = ['ходат', 'мероприя']
     if message_check(greet_list, message) and message_check(reward_list, message):
+        time.sleep(random.randint(7, 15))
         await message.reply(RESPONSE)
+        time.sleep(random.randint(3, 5))
         await message.reply(RESPONSE_NOT_MY)
 
 if __name__ == '__main__':
