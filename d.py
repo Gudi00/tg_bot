@@ -18,14 +18,19 @@ def message_check(message_list, message):
             return True
     return False
 
-
+def del_check(message_list, message):
+    for mess in message_list:
+        if mess in message.text.lower():
+            return False
+    return True
 
 
 @app.on_message(filters.text & filters.group)
 async def reply1(client, message):
     greet_list = ['всем привет', 'добрый день', 'нужно', 'нужны', 'надо']
     reward_list = ['ходат', 'мероприя']
-    if message_check(greet_list, message) and message_check(reward_list, message):
+    del_list = ['яблок']
+    if message_check(greet_list, message) and message_check(reward_list, message) and del_check(del_list, message):
         time.sleep(random.randint(15, 30))
         await message.reply(RESPONSE)
         time.sleep(random.randint(3, 6))
