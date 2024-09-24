@@ -26,7 +26,7 @@ async def reply1(client, message):
     greet_list = ['всем привет', 'добрый день', 'нужно', 'нужны', 'надо']
     reward_list = ['ходат', 'мероприя']
     if message_check(greet_list, message) and message_check(reward_list, message):
-        time.sleep(random.randint(7, 15))
+        time.sleep(random.randint(15, 30))
         await message.reply(RESPONSE)
         time.sleep(random.randint(3, 6))
         await message.reply(RESPONSE_NOT_MY)
